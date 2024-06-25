@@ -5,10 +5,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Clicker</title>
 </head>
+<style>
+    .buttonDiv{
+        text-align: center;
+        font-size: 150%;
+    }
+</style>
+
 <body>
 
-    <p id="money" style="font-size: 150%; text-align:center;">Money: 0</p>
-    <p id="clickcount" style="font-size: 150%; text-align:center;">Multiplier: 1</p>
+    <div class="buttonDiv">
+    <h1 >Rusty Clicker</h1>
+    <button onclick="save()">Save</button>
+    <button onclick="load()">Load</button>
+    <p id="money">Money: 0</p>
+    <p id="clickcount">Multiplier: 1</p>
+    </div>
 
 
     <hr>
