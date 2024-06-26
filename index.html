@@ -10,13 +10,27 @@
         text-align: center;
         font-size: 150%;
     }
+
+    *, *::after, *::before {
+        box-sizing: border-box;
+        padding: 0;
+        margin: 0;
+    }
+
+    .dark-mode {
+        background-color: rgb(66, 66, 66);
+        color: rgb(221,221,221);
+    }
+
 </style>
 
-<body>
+<body onload="load(), ColorOnLoad()">
+
 
     <div class="buttonDiv">
     <h1 >Rusty Clicker</h1>
     <button onclick="save()">Save</button>
+    <button onclick="ToggleDarkMode()">Toggle Dark Mode</button>
     <button onclick="load()">Load</button>
     <p id="money">Money: 0</p>
     <p id="clickcount">Multiplier: 1</p>
@@ -28,6 +42,8 @@
     <p>Multipliers</p>
     <button id="add1" disabled onclick="add1multi()">Add 1 <br> Cost: 10</button>
     <button id="add25" disabled onclick="add25multi()">Add 2.5 <br> Cost: 20</button>
+
+    
 
 </body>
 

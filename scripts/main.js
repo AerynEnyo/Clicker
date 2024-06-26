@@ -1,7 +1,8 @@
 // Variables
 let v = {
+    darkModeOn: false,
     multi: 1,
-    money: 0,
+    money: 0
 }
 
 let add1cost = 10;
@@ -9,14 +10,46 @@ let add25cost = 20;
 
 var timer = setInterval(moneypersec, 1000);
 var timer = setInterval(UIUpdate, 67);
+var timer = setInterval(save, 30000);
+
+function load(){
+    if(localStorage.getItem("variables") === null || localStorage.getItem("variables") === "null"){
+        let v = {
+            darkModeOn: false,
+            multi: 1,
+            money: 0
+        }
+        save();
+    }else{
+        v = JSON.parse(localStorage.getItem("variables"));
+    }
+}
 
 function save(){
     localStorage.setItem("variables", JSON.stringify(v))
 }
 
-function load(){
-    v = JSON.parse(localStorage.getItem("variables"))
-}
+function ToggleDarkMode() {
+    if(v.darkModeOn == false) {
+        var element = document.body;
+        element.classList.toggle("dark-mode");
+        v.darkModeOn = true;
+        console.log("dark on");
+    }else {
+        var element = document.body;
+        element.classList.toggle("dark-mode");
+        v.darkModeOn = false;
+        console.log("dark off");
+    }
+    }
+
+function ColorOnLoad() {
+        if (v.darkModeOn == true) {
+            var element = document.body;
+            element.classList.toggle("dark-mode");
+            console.log("dark on")
+        }    
+    }
 
 function moneypersec(){
     v.money += 1 * v.multi;
@@ -53,5 +86,4 @@ function UIUpdate(){
     else {
         document.getElementById("add25").toggleAttribute("disabled", true);
     }
-
 }
