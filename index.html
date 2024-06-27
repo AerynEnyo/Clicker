@@ -9,7 +9,19 @@
     .buttonDiv{
         text-align: center;
         font-size: 150%;
+        
     }
+
+    .moneybutton {
+        height:100px;
+        width: 100px;
+        background-color: rgb(71, 255, 47);
+        font-size: xx-large;
+    }
+
+    .moneybutton:active {
+          box-shadow: inset 0px 0px 20px hsl(113, 100%, 20%);
+}
 
     *, *::after, *::before {
         box-sizing: border-box;
@@ -34,15 +46,23 @@
     <button onclick="load()">Load</button>
     <p id="money">Money: 0</p>
     <p id="clickcount">Multiplier: 1</p>
+
+    <hr>
+    <br>
+        <button class="moneybutton" onclick="moneyclick();">$</button>
     </div>
 
+    <br>
+    <br>
 
     <hr>
 
     <p>Multipliers</p>
     <button id="add1" disabled onclick="add1multi()">Add 1 <br> Cost: 10</button>
-    <button id="add25" disabled onclick="add25multi()">Add 2.5 <br> Cost: 20</button>
-
+    <button id="add5" disabled onclick="add5multi()">Add 5 <br> Cost: 50</button>
+    <button id="add10" disabled onclick="add10multi()">Add 10 <br> Cost: 100</button>
+    <button id="add25" disabled onclick="add25multi()">Add 25 <br> Cost: 250</button>
+    <button id="add50" disabled onclick="add50multi()">Add 50 <br> Cost: 500</button>
     
 
 </body>
